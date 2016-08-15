@@ -24,7 +24,9 @@ matrix:
       sudo: required
 
 before_install:
-  - git submodule update --init --remote --merge --recursive
+  - git submodule init
+  - cd Package-Builder
+  - git checkout swift_upgrade
 
 script:
   - ./Package-Builder/script_travis.sh $TRAVIS_OS_NAME $TRAVIS_BRANCH $TRAVIS_BUILD_DIR hello-world
