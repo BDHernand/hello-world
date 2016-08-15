@@ -20,6 +20,6 @@ export KITURA_CI_BUILD_SCRIPTS_DIR=Package-Builder/build
 Package-Builder/build/Makefile:
 	@echo --- Fetching Package-Builder submodule
 	git submodule init
-        cd Package-Builder
-        git checkout swift_upgrade
+	cd Package-Builder
+	git checkout swift_upgrade
 
