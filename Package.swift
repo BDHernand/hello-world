@@ -17,10 +17,5 @@
 import PackageDescription
 
 let package = Package(
-  name: "hello-world",
-  targets: [
-  ],
-  dependencies: [
-    ],
-  testDependencies: []
+  name: "hello-world"
 )
