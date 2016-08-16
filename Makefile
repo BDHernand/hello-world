@@ -19,7 +19,11 @@ export KITURA_CI_BUILD_SCRIPTS_DIR=Package-Builder/build
 
 Package-Builder/build/Makefile:
 	@echo --- Fetching Package-Builder submodule
-	git submodule init
-	cd Package-Builder
-	git checkout swift_upgrade
+	git submodule update --init
+
+run: build
+	@echo --- Invoking KituraSample executable
+	./.build/debug/HelloWorldSwift
+
+.PHONY: run
 
