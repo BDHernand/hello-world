@@ -17,7 +17,7 @@
 import PackageDescription
 
 let package = Package(
-  name: "HelloWorldSwift",
+  name: "hello-world",
   targets: [
   ],
   dependencies: [
