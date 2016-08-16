@@ -1,0 +1,7 @@
+app:
+  image: ibmcom/kitura-ubuntu
+  ports:
+    - "8090:8090"
+  volumes:
+    - .:/root/HelloWorldSwift
+  command: bash -c "make clean -C HelloWorldSwift && make -C HelloWorldSwift && HelloWorldSwift/.build/debug/HelloWorldSwift"
