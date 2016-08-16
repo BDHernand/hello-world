@@ -3,5 +3,5 @@ app:
   ports:
     - "8090:8090"
   volumes:
-    - .:/root/HelloWorldSwift
-  command: bash -c "make clean -C HelloWorldSwift && make -C HelloWorldSwift && HelloWorldSwift/.build/debug/HelloWorldSwift"
+    - .:/root/hello-world
+  command: bash -c "make clean -C hello-world && make -C hello-world && hello-world/.build/debug/hello-world"
