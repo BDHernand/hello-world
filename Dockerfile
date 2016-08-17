@@ -64,6 +64,9 @@ RUN wget https://swift.org/builds/development/$UBUNTU_VERSION_NO_DOTS/$SWIFT_SNA
 ENV PATH $WORK_DIR/$SWIFT_SNAPSHOT-$UBUNTU_VERSION/usr/bin:$PATH
 RUN swiftc -h
 
+#Hack to force usage of the gold linker
+RUN rm /usr/bin/ld && ln -s /usr/bin/ld.gold /usr/bin/ld
+
 # Set compiler environment variables
 ENV CC /usr/bin/clang-3.8
 ENV CXX /usr/bin/clang-3.8
