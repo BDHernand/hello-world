@@ -21,7 +21,7 @@ MAINTAINER IBM Swift Engineering at IBM Cloud
 LABEL Description="Linux Ubuntu 14.04 image with the Swift binaries."
 
 # Set environment variables for image
-ENV SWIFT_SNAPSHOT swift-DEVELOPMENT-SNAPSHOT-2016-08-07-a
+ENV SWIFT_SNAPSHOT swift-DEVELOPMENT-SNAPSHOT-2016-08-15-a
 ENV UBUNTU_VERSION ubuntu14.04
 ENV UBUNTU_VERSION_NO_DOTS ubuntu1404
 ENV HOME /root
@@ -31,12 +31,16 @@ ENV LIBDISPATCH_BRANCH master
 # Set WORKDIR
 WORKDIR ${WORK_DIR}
 
+RUN apt-get update && apt-get install -y wget
+RUN wget -O - http://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
+RUN echo "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-3.9 main" | sudo tee -a /etc/apt/sources.list
+
 # Linux OS utils
 RUN apt-get update && apt-get install -y \
   automake \
   build-essential \
-  clang-3.8 \
-  lldb-3.8 \
+  clang-3.9 \
+  lldb-3.9 \
   curl \
   gcc-4.8 \
   git \
@@ -68,10 +72,10 @@ RUN swiftc -h
 RUN rm /usr/bin/ld && ln -s /usr/bin/ld.gold /usr/bin/ld
 
 # Set compiler environment variables
-ENV CC /usr/bin/clang-3.8
-ENV CXX /usr/bin/clang-3.8
-ENV OBJC /usr/bin/clang-3.8
-ENV OBJCXX /usr/bin/clang-3.8
+ENV CC /usr/bin/clang-3.9
+ENV CXX /usr/bin/clang-3.9
+ENV OBJC /usr/bin/clang-3.9
+ENV OBJCXX /usr/bin/clang-3.9
 
 # Clone and install swift-corelibs-libdispatch
 RUN git clone -b $LIBDISPATCH_BRANCH https://github.com/apple/swift-corelibs-libdispatch.git \
