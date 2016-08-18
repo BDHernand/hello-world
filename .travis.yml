@@ -13,4 +13,4 @@ before_install:
   - cd ./Package-Builder && git checkout ro_test
 
 script:
-  - ./Package-Builder/script_travis.sh $TRAVIS_BRANCH
+  - ./script_travis.sh $TRAVIS_BRANCH
