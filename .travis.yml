@@ -10,7 +10,7 @@ matrix:
 
 before_install:
   - git submodule update --init --remote --merge --recursive
-  - cd ./Package-Builder && git checkout ro_test
+  - cd ./Package-Builder && git checkout ro_test2
   - cd -
   - echo here
 
