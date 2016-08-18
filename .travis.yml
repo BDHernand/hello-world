@@ -13,5 +13,4 @@ before_install:
   - cd ./Package-Builder && git checkout ro_test
 
 script:
-#  - ./Package-Builder/script_travis.sh $TRAVIS_OS_NAME $TRAVIS_BRANCH $TRAVIS_BUILD_DIR Swift-cfenv
-  - echo Hey THERE
+  - ./Package-Builder/script_travis.sh $TRAVIS_BRANCH
