@@ -11,6 +11,7 @@ matrix:
 before_install:
   - git submodule update --init --remote --merge --recursive
   - cd ./Package-Builder && git checkout ro_test
+  - cd -
 
 script:
-  - ./script_travis.sh $TRAVIS_BRANCH
+  - ./Package-Builder/script_travis.sh $TRAVIS_BRANCH
