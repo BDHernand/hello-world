@@ -14,4 +14,4 @@ before_install:
   - cd -
 
 script:
-  - ./Package-Builder/script_travis.sh $TRAVIS_BRANCH
+  - ./Package-Builder/script_travis.sh $TRAVIS_BRANCH $TRAVIS_BUILD_DIR
