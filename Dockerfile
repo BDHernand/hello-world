@@ -37,29 +37,22 @@ RUN echo "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-3.9 main" | sudo
 
 # Linux OS utils
 RUN apt-get update && apt-get install -y \
-  automake \
-  build-essential \
-  clang-3.9 \
-  lldb-3.9 \
-  curl \
-  gcc-4.8 \
-  git \
-  g++-4.8 \
-  libblocksruntime-dev \
-  libbsd-dev \
-  libglib2.0-dev \
-  libpython2.7 \
-  libicu-dev \
-  libkqueue-dev \
-  libtool \
-  lsb-core \
-  openssh-client \
-  vim \
-  wget \
-  binutils-gold \
-  libcurl4-openssl-dev \
-  openssl \
-  libssl-dev
+   automake \
+   clang-3.9 \
+   lldb-3.9 \
+   git \
+   libicu-dev \
+   libkqueue-dev \
+   libtool \
+   libcurl4-openssl-dev \
+   libbsd-dev \
+   libblocksruntime-dev \
+   build-essential \
+   libwrap0-dev \
+   libssl-dev \
+   libc-ares-dev \
+   uuid-dev \
+   xsltproc
 
 # Install Swift compiler
 RUN wget https://swift.org/builds/development/$UBUNTU_VERSION_NO_DOTS/$SWIFT_SNAPSHOT/$SWIFT_SNAPSHOT-$UBUNTU_VERSION.tar.gz \
