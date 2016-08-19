@@ -1,7 +1,7 @@
 app:
-  image: image 
+  image: ibmcom/swift-ubuntu
   ports:
     - "8090:8090"
   volumes:
     - .:/root/hello-world
-  command: bash -c "make clean -C hello-world && make -C hello-world && hello-world/.build/debug/hello-world"
+  command: bash -c "cd /root/hello-world && swift build --clean && swift build -v"
