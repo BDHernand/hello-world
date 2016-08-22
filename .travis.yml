@@ -24,7 +24,7 @@ matrix:
 before_install:
   - git submodule init
   - cd Package-Builder
-  - git checkout ro_test
+  - git checkout swift_upgrade 
   - cd $TRAVIS_BUILD_DIR
 
 script:
