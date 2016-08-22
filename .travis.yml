@@ -25,6 +25,7 @@ before_install:
   - git submodule init
   - cd Package-Builder
   - git checkout swift_upgrade
+  - cd $TRAVIS_BUILD_DIR
 
 script:
   - ./Package-Builder/script_travis.sh $TRAVIS_OS_NAME $TRAVIS_BRANCH $TRAVIS_BUILD_DIR hello-world
